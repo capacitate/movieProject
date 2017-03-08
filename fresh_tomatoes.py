@@ -7,7 +7,6 @@ main_page_head = '''
 <head>
     <meta charset="utf-8">
     <title>Fresh Tomatoes!</title>
-    <Button>Button</Button>
 
     <!-- Bootstrap 3 -->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -79,7 +78,20 @@ main_page_head = '''
             $(this).next("div").show("fast", showNext);
           });
         });
+        // Click this method call another python file to store in the db.
+        function showAddMovie(){
+          var addMovieHtml = [];
+          addMovieHtml.push('<form action="http://localhost:5004/getTest" method="post">');
+          addMovieHtml.push('<p>Movie title: <input type="text" name="MovieTitle"></p>');
+          addMovieHtml.push('<p>Story line: <input type="text" name="StoryLine"></p>');
+          addMovieHtml.push('<p>Poster url: <input type="text" name="PosterUrl"></p>');
+          addMovieHtml.push('<p>Trailer url: <input type="text" name="TrailerUrl"></p>');
+          addMovieHtml.push('<p><input type="submit" value="submit"></p>');
+          addMovieHtml.push('</form>');
+          document.getElementById("addMovieRegion").innerHTML = addMovieHtml.join('');
+        }
     </script>
+    <p id="addMovieRegion"></p>
 </head>
 '''
 
@@ -107,6 +119,7 @@ main_page_content = '''
         <div class="container">
           <div class="navbar-header">
             <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
+            <button onClick="showAddMovie()">Add movie</Button>
           </div>
         </div>
       </div>

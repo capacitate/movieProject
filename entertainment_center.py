@@ -1,5 +1,11 @@
 import media
 import fresh_tomatoes
+from pymongo import MongoClient
+
+client = MongoClient()
+
+# need to store this information on mongo db Class -> JSON and JSON -> Class
+# and retrieve this information on fresh_tomatoes.py
 
 toy_story = media.Movie("Toy Story",
 	"A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boy's room.",
@@ -31,5 +37,7 @@ you_are_the_apple_of_my_eye = media.Movie("You are the apple of my eye",
 	"https://upload.wikimedia.org/wikipedia/en/a/aa/You_Are_the_Apple_of_My_Eye_film_poster.jpg",
 	"https://www.youtube.com/watch?v=FyRysi1Vovs")
 
+# print (toy_story.toJSON())
+# Use this as a dict and re-instantiate the whole 
 movies = [toy_story, avatar, civial_war, fabricated_city, the_intern, you_are_the_apple_of_my_eye]
 fresh_tomatoes.open_movies_page(movies)
