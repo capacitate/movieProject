@@ -78,15 +78,23 @@ main_page_head = '''
             $(this).next("div").show("fast", showNext);
           });
         });
+        // Check required fields of form. 
+        function validateForm(){
+          var movieTitle = document.form["movieInput"]["MovieTitle"].value;
+          if(movieTitle == ""){
+            alert("Movie title must be filled out.");
+            return false;
+          }
+        }
         // Click this method call another python file to store in the db.
         function showAddMovie(){
           var addMovieHtml = [];
-          addMovieHtml.push('<form action="http://localhost:5004/getTest" method="post">');
-          addMovieHtml.push('<p>Movie title: <input type="text" name="MovieTitle"></p>');
-          addMovieHtml.push('<p>Story line: <input type="text" name="StoryLine"></p>');
-          addMovieHtml.push('<p>Poster url: <input type="text" name="PosterUrl"></p>');
-          addMovieHtml.push('<p>Trailer url: <input type="text" name="TrailerUrl"></p>');
-          addMovieHtml.push('<p><input type="submit" value="submit"></p>');
+          addMovieHtml.push('<form name="movieInput" action="http://localhost:5004/addMovie" onsubmit="return validateForm()" method="post">');
+          addMovieHtml.push('<p>Movie title: <input type="text" name="title"></p>');
+          addMovieHtml.push('<p>Story line: <input type="text" name="movie_storyline"></p>');
+          addMovieHtml.push('<p>Poster url: <input type="text" name="poster_image_url"></p>');
+          addMovieHtml.push('<p>Trailer url: <input type="text" name="trailer_youtube_url"></p>');
+          addMovieHtml.push('<p><input type="submit" value="Submit"></p>');
           addMovieHtml.push('</form>');
           document.getElementById("addMovieRegion").innerHTML = addMovieHtml.join('');
         }
