@@ -1,6 +1,20 @@
+#Ready for dependency
+1. Install pip
+
+ (Mac) `$ sudo easy_install pip`
+
+ (Windows) - [Link](https://github.com/BurntSushi/nfldb/wiki/Python-&-pip-Windows-installation)
+
+2. pip install Flask
+
+3. pip install SQLAlchemy
+
+4. pip install Flask-SQLAlchemy
+
 #How to execute?
 1. Server start: `$ python views.py` - check the port number (default: 5004)
 2. Show webpage: `$ python entertainment_center.py`
+3. Add movie
 
 
 #Function
