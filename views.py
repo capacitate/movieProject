@@ -13,9 +13,6 @@ session = DBsession()
 
 app = Flask(__name__)
 
-# Check the user input is appropriate
-# Maybe I can use HTML error code to indicate something wrong
-# All four rows are required
 @app.route('/addMovie', methods=['POST'])
 def getTest():
 	# Get form input. 
@@ -29,26 +26,30 @@ def getTest():
 	trailer_youtube_url = newTrailer_youtube_url)
 
 	# Check if the text box is empty or not.
+	# All four rows are required.
+	if not newTitle:
+		return 'No movie title!'
+
+	if not newMovie_storyline:
+		return 'No movie storyline'
+
+	if not newPoster_image_url:
+		return 'No movie poster image url'
+
+	if not newTrailer_youtube_url:
+		return 'No movie trailer url'
+
+	# Check duplicate movie title. 
 	isNewMovie = session.query(Movie).filter_by(title = newMovie.title).first()	
-	if not isNewMovie:
-		print (newTitle)
-		session.add(newMovie)
-		session.commit()
+	if isNewMovie:
+		return 'Duplicate movie!'
+
+	session.add(newMovie)
+	session.commit()
 	
-	movie_items = session.query(Movie).all()
-	fresh_tomatoes.open_movies_page(movie_items)
-	return 'OK'
-
-
-@app.route('/')
-def reloadDB():
 	movies = session.query(Movie).all()
-	# Wrap with movie object from media.
-	print (movies)
-	# allMovies = []
-	# for movie in movies:
-	# 	allMovies.extend()
-	fresh_tomatoes.open_movies_page()
+	fresh_tomatoes.open_movies_page(movies)
+	return 'OK'
 
 if __name__ == '__main__':
 	app.debug = True

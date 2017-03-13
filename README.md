@@ -18,13 +18,11 @@ python - 2.7.10
 chrome - Version 56.0.2924.87 (64-bit)
 
 #Dependency
-MongoDB - 3.4.0
+Flask and Sqlalchemy
 
-How to install Mongodb [Link](http://api.mongodb.com/python/current/installation.html?_ga=1.220129373.514028619.1488923617)
+Flask installation [Link](http://flask.pocoo.org/docs/0.12/installation/)
 
-Or use this command
-
-`$ python -m pip install pymongo`
+Sqlalchemy installation [Link](http://pythoncentral.io/how-to-install-sqlalchemy/)
 
 ##Course Info
 PROGRAMMING FOUNDATIONS WITH PYTHON(from UDACITY) [Link](https://www.udacity.com/course/programming-foundations-with-python--ud036)

@@ -40,15 +40,17 @@ you_are_the_apple_of_my_eye = Movie(title = "You are the apple of my eye",
 	poster_image_url = "https://upload.wikimedia.org/wikipedia/en/a/aa/You_Are_the_Apple_of_My_Eye_film_poster.jpg",
 	trailer_youtube_url = "https://www.youtube.com/watch?v=FyRysi1Vovs")
 
-# print (toy_story.toJSON())
-# Use this as a dict and re-instantiate the whole 
 movies = [toy_story, avatar, civial_war, fabricated_city, the_intern, you_are_the_apple_of_my_eye]
 
 # Put default movie list on database.
+# If default movie lists are already in database, then read db and show to the user.
 for movie in movies:
 	isNewMovie = session.query(Movie).filter_by(title = movie.title).first()	
 	if not isNewMovie:
 		session.add(movie)
 		session.commit()
+	else:
+		movies = session.query(Movie).all()
+		break
 
 fresh_tomatoes.open_movies_page(movies)
