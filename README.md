@@ -13,8 +13,10 @@
 
 #How to execute?
 1. Server start: `$ python views.py` - check the port number (default: 5004)
+
 2. Show webpage: `$ python entertainment_center.py`
-3. Add movie
+
+3. Add movie ![Image of Yaktocat](https://github.com/capacitate/movieProject/blob/master/images/addMovieItem.png)
 
 
 #Function
