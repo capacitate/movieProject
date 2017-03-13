@@ -16,7 +16,12 @@
 
 2. Show webpage: `$ python entertainment_center.py`
 
-3. Add movie ![Image of Yaktocat](https://github.com/capacitate/movieProject/blob/master/images/addMovieItem.png)
+3. Click Add movie button
+![add_movie](https://github.com/capacitate/movieProject/blob/master/images/addMovies.png)
+
+4. Fill out and submit
+
+![movie item](https://github.com/capacitate/movieProject/blob/master/images/addMovieItem.png)
 
 
 #Function
