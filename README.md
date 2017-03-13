@@ -17,6 +17,7 @@
 2. Show webpage: `$ python entertainment_center.py`
 
 3. Click Add movie button
+
 ![add_movie](https://github.com/capacitate/movieProject/blob/master/images/addMovies.png)
 
 4. Fill out and submit
@@ -33,17 +34,12 @@ Provided(Default) [Link](https://docs.google.com/document/d/1joDQNQl_4icYYm6tM_F
  |- [ ] Double click to play OST of movie.
 
 
-#Test version
+#Test machine
 python - 2.7.10
 
 chrome - Version 56.0.2924.87 (64-bit)
 
-#Dependency
-Flask and Sqlalchemy
-
-Flask installation [Link](http://flask.pocoo.org/docs/0.12/installation/)
-
-Sqlalchemy installation [Link](http://pythoncentral.io/how-to-install-sqlalchemy/)
+Windows10(64-bit) and Mac OS Sierra
 
 ##Course Info
 PROGRAMMING FOUNDATIONS WITH PYTHON(from UDACITY) [Link](https://www.udacity.com/course/programming-foundations-with-python--ud036)
