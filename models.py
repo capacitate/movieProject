@@ -8,6 +8,7 @@ Base = declarative_base()
 
 
 class Movie(Base):
+	""" This class stores movie information."""
     __tablename__ = 'Movie'
     id = Column(Integer, primary_key=True)
     title = Column(String, unique=True, nullable=False)
